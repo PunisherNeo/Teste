@@ -1,0 +1,176 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:padding="16dp">
+
+    <!-- Título "Calculadora de Missões" -->
+    <TextView
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:text="Calculadora de Missões"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/textTitulo"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Missão 1 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="1"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 1"
+        android:id="@+id/textviewMissao1"/>
+
+    <!-- Missão 2 -->
+    <Spinner
+        android:id="@+id/comboBoxMissao1"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="2"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 2"
+        android:id="@+id/textviewMissao2"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="2"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao2"/>
+
+    <!-- Missão 3 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="3"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 3"
+        android:id="@+id/textviewMissao3"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="3"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao3"/>
+
+    <!-- Missão 4 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="4"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 4"
+        android:id="@+id/textviewMissao4"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="4"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao4"/>
+
+    <!-- Missão 5 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="5"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 5"
+        android:id="@+id/textviewMissao5"/>
+
+    <!-- Missão 6 -->
+    <Spinner
+        android:id="@+id/comboBoxMissao5"
+        android:layout_row="5"
+        android:layout_column="1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="6"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 6"
+        android:id="@+id/textviewMissao6"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="6"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao6"/>
+
+    <!-- Missão 7 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="7"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 7"
+        android:id="@+id/textviewMissao7"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="7"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao7"/>
+
+    <!-- Missão 8 -->
+    <TextView
+        android:layout_column="0"
+        android:layout_row="8"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:hint="Missão 8"
+        android:id="@+id/textviewMissao8"/>
+
+    <Spinner
+        android:layout_column="1"
+        android:layout_row="8"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/comboBoxMissao8"/>
+
+    <!-- Botão de Calcular -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:layout_column="0"
+        android:layout_row="9"
+        android:layout_marginTop="34dp"
+        android:text="Calcular"/>
+
+    <TextView
+        android:id="@+id/textViewResultadoCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCalcular"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Botão de Voltar -->
+    <Button
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:layout_column="0"
+        android:layout_row="10"
+        android:text="Voltar"
+        android:layout_below="@+id/textViewResultadoCalculo"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnVoltar"/>
+
+</GridLayout>

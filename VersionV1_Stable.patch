@@ -1,0 +1,965 @@
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	
++++ b/app/src/main/res/values/themes.xml	(date 1700254006163)
+@@ -1,9 +1,9 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Base.Theme.TacticoolPlanner" parent="Theme.Material3.DayNight.NoActionBar">
++    <style name="Base.Theme.Teste" parent="Theme.Material3.DayNight.NoActionBar">
+         <!-- Customize your light theme here. -->
+         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+     </style>
+ 
+-    <style name="Theme.TacticoolPlanner" parent="Base.Theme.TacticoolPlanner" />
++    <style name="Theme.Teste" parent="Base.Theme.Teste" />
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	(date 1700254006162)
+@@ -1,5 +1,5 @@
+ <resources>
+-    <string name="app_name">TacticoolPlanner</string>
++    <string name="app_name">Teste</string>
+     <string name="navigation_drawer_open">Abrir Menu</string>
+     <string name="navigation_drawer_close">Fechar Menu</string>
+     <string name="_2000">2000</string>
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+--- a/app/src/main/res/values-night/themes.xml	
++++ b/app/src/main/res/values-night/themes.xml	(date 1700254006161)
+@@ -1,6 +1,6 @@
+ <resources xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Base.Theme.TacticoolPlanner" parent="Theme.Material3.DayNight.NoActionBar">
++    <style name="Base.Theme.Teste" parent="Theme.Material3.DayNight.NoActionBar">
+         <!-- Customize your dark theme here. -->
+         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+     </style>
+Index: app/src/main/java/com/example/teste/HomeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/HomeActivity.java b/app/src/main/java/com/example/teste/HomeActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006127)
++++ b/app/src/main/java/com/example/teste/HomeActivity.java	(date 1700254006127)
+@@ -0,0 +1,57 @@
++package com.example.teste;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.MenuItem;
++import android.view.View;
++import android.widget.Button;
++import android.widget.Toast;
++
++import androidx.annotation.NonNull;
++import androidx.appcompat.app.ActionBar;
++import androidx.appcompat.app.ActionBarDrawerToggle;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.drawerlayout.widget.DrawerLayout;
++
++import com.example.teste.R;
++import com.google.android.material.navigation.NavigationView;
++
++public class HomeActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_home);
++
++        Button btnCalculadoras = findViewById(R.id.btnCalculadoras);
++        Button btnCadastro = findViewById(R.id.btnCadastro);
++        Button btnConsulta = findViewById(R.id.btnConsulta);
++
++        btnCalculadoras.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em Calculadoras, vá para a tela de Calculadoras
++                Intent intent = new Intent(HomeActivity.this, CalculadorasActivity.class);
++                startActivity(intent);
++            }
++        });
++
++        btnCadastro.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em Cadastro, vá para a tela de Cadastro
++                Intent intent = new Intent(HomeActivity.this, CadastroActivity.class);
++                startActivity(intent);
++            }
++        });
++
++        btnConsulta.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em Consulta, vá para a tela de Consulta
++                Intent intent = new Intent(HomeActivity.this, ConsultaActivity.class);
++                startActivity(intent);
++            }
++        });
++    }
++}
+Index: app/src/main/java/com/example/teste/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/MainActivity.java b/app/src/main/java/com/example/teste/MainActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006125)
++++ b/app/src/main/java/com/example/teste/MainActivity.java	(date 1700254006125)
+@@ -0,0 +1,52 @@
++package com.example.teste;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++import android.widget.EditText;
++import android.widget.Toast;
++
++public class MainActivity extends AppCompatActivity {
++
++    private EditText editTextUsername, editTextPassword;
++    private Button buttonLogin;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++        // Referenciar os elementos da UI
++        editTextUsername = findViewById(R.id.editTextUsername);
++        editTextPassword = findViewById(R.id.editTextPassword);
++        buttonLogin = findViewById(R.id.buttonLogin);
++
++        // Adicionar um listener de clique ao botão de login
++        buttonLogin.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Obter o texto dos campos de usuário e senha
++                String username = editTextUsername.getText().toString();
++                String password = editTextPassword.getText().toString();
++
++                // Implementar a lógica de autenticação (pode ser uma verificação simples)
++                if (username.equals("") && password.equals("")) {
++                    // Autenticação bem-sucedida
++
++                    // Iniciar a HomeActivity
++                    Intent intent = new Intent(MainActivity.this, com.example.teste.HomeActivity.class);
++                    startActivity(intent);
++
++                    // Fechar a MainActivity para evitar que o usuário retorne pressionando o botão "Voltar"
++                    finish();
++                } else {
++                    // Autenticação falhou
++                    Toast.makeText(MainActivity.this, "Login falhou", Toast.LENGTH_SHORT).show();
++                }
++            }
++        });
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/teste/CadastroActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/CadastroActivity.java b/app/src/main/java/com/example/teste/CadastroActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006123)
++++ b/app/src/main/java/com/example/teste/CadastroActivity.java	(date 1700254006123)
+@@ -0,0 +1,28 @@
++package com.example.teste;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++
++public class CadastroActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_cadastro);
++
++        Button btnVoltar = findViewById(R.id.btnVoltar);
++
++        btnVoltar.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em "Voltar", retorne para a tela anterior
++                onBackPressed();
++            }
++        });
++
++        // Adicione mais lógica conforme necessário
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/teste/ConsultaActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/ConsultaActivity.java b/app/src/main/java/com/example/teste/ConsultaActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006121)
++++ b/app/src/main/java/com/example/teste/ConsultaActivity.java	(date 1700254006121)
+@@ -0,0 +1,28 @@
++package com.example.teste;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++
++public class ConsultaActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_consulta);
++
++        Button btnVoltar = findViewById(R.id.btnVoltar);
++
++        btnVoltar.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em "Voltar", retorne para a tela anterior
++                onBackPressed();
++            }
++        });
++
++        // Adicione mais lógica conforme necessário
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/teste/CalculadorasActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/CalculadorasActivity.java b/app/src/main/java/com/example/teste/CalculadorasActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006118)
++++ b/app/src/main/java/com/example/teste/CalculadorasActivity.java	(date 1700254006118)
+@@ -0,0 +1,30 @@
++package com.example.teste;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++
++public class CalculadorasActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_calculadoras);
++
++        Button btnCalculadoraMods = findViewById(R.id.btnCalculadoraMods);
++
++        btnCalculadoraMods.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                // Ao clicar em "Calculadora de Mods", vá para a tela CalculadoraModsActivity
++                Intent intent = new Intent(CalculadorasActivity.this, CalculadoraModsActivity.class);
++                startActivity(intent);
++            }
++        });
++
++        // Adicione mais inicializações ou lógica conforme necessário
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/teste/CalculadoraModsActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/teste/CalculadoraModsActivity.java b/app/src/main/java/com/example/teste/CalculadoraModsActivity.java
+new file mode 100644
+--- /dev/null	(date 1700254006116)
++++ b/app/src/main/java/com/example/teste/CalculadoraModsActivity.java	(date 1700254006116)
+@@ -0,0 +1,125 @@
++package com.example.teste;
++
++import android.os.Bundle;
++import android.view.View;
++import android.widget.AdapterView;
++import android.widget.ArrayAdapter;
++import android.widget.Button;
++import android.widget.EditText;
++import android.widget.Spinner;
++import android.widget.TextView;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++public class CalculadoraModsActivity extends AppCompatActivity {
++
++        private Spinner comboMods1;
++        private EditText quantidadeMods;
++        private EditText valorModBranco;
++        private TextView resultadoCalculo;
++
++        private final int[] taxasDeConversao = {6, 30, 120, 360};
++
++        private int calcularQuantidadeMods(int quantidade, int posicaoComboMods) {
++                int taxaConversao = 1;
++                for (int i = 0; i < posicaoComboMods; i++) {
++                        taxaConversao *= taxasDeConversao[i];
++                }
++                return quantidade * taxaConversao;
++        }
++
++        @Override
++        protected void onCreate(Bundle savedInstanceState) {
++                super.onCreate(savedInstanceState);
++                setContentView(R.layout.activity_calculadora_mods);
++
++                quantidadeMods = findViewById(R.id.quantidadeMods);
++                comboMods1 = findViewById(R.id.comboMods1);
++                valorModBranco = findViewById(R.id.valorModBranco);
++                resultadoCalculo = findViewById(R.id.resultadoCalculo);
++
++                valorModBranco.setText("2000"); // Valor padrão para valorModBranco
++
++                final String[] opcoesMods1 = {"Branco", "Azul", "Roxo", "Laranja", "Amarelo"};
++
++                ArrayAdapter<String> adapterMods1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opcoesMods1);
++                adapterMods1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++                comboMods1.setAdapter(adapterMods1);
++
++                comboMods1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
++                        @Override
++                        public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
++                                calcularConversao();
++                        }
++
++                        @Override
++                        public void onNothingSelected(AdapterView<?> adapterView) {
++                                // Implementação se nada for selecionado
++                        }
++                });
++
++                Button btnCalcular = findViewById(R.id.btnCalcular);
++                btnCalcular.setOnClickListener(new View.OnClickListener() {
++                        @Override
++                        public void onClick(View view) {
++                                calcularConversao();
++                        }
++                });
++        }
++
++        private void calcularConversao() {
++                String quantidadeStr = quantidadeMods.getText().toString();
++                String valorModStr = valorModBranco.getText().toString();
++
++                if (!quantidadeStr.isEmpty() && !valorModStr.isEmpty()) {
++                        int quantidade = Integer.parseInt(quantidadeStr);
++                        int valorMod = Integer.parseInt(valorModStr);
++
++                        int posicaoComboMods = comboMods1.getSelectedItemPosition();
++                        String corSelecionada = comboMods1.getSelectedItem().toString();
++
++                        String textoResultado = "";
++
++                        switch (corSelecionada.toLowerCase()) {
++                                case "branco":
++                                        textoResultado = "Para " + quantidade + " Mods Branco você precisa de " + (valorMod * quantidade) + " Prata.";
++                                        break;
++                                case "azul":
++                                        int modsBranco = calcularQuantidadeMods(quantidade, posicaoComboMods);
++                                        textoResultado = "Para " + quantidade + " Mods Azuis você precisa de " + modsBranco +
++                                                " Mods Brancos. Totalizando " + (modsBranco * valorMod) + " Prata.";
++                                        break;
++                                case "roxo":
++                                        int modsRoxos = calcularQuantidadeMods(quantidade, posicaoComboMods);
++                                        int modsBrancosRoxos = quantidade*30;
++                                        int modsAzuisRoxos = quantidade*5;
++                                        textoResultado = "Para " + quantidade + " Mods Roxos você precisa de " + modsAzuisRoxos + " Mods Azuis ou " + modsBrancosRoxos +
++                                                        " Mods Brancos. Totalizando " + (modsBrancosRoxos * valorMod) + " Prata.";
++                                        break;
++                                case "laranja":
++                                        int modsLaranjas = calcularQuantidadeMods(quantidade, posicaoComboMods);
++                                        int modsRoxosLaranjas = quantidade*4;
++                                        int modsAzuisLaranjas = quantidade*20;
++                                        int modsBrancosLaranjas = quantidade*120;
++                                        textoResultado = "Para " + quantidade + " Mods Laranjas você precisa de " + modsRoxosLaranjas + " Mods Roxos ou " + modsAzuisLaranjas +
++                                                        " Mods Azuis ou " + modsBrancosLaranjas + " Mods Brancos. Totalizando " +
++                                                        (modsBrancosLaranjas * valorMod) + " Prata.";
++                                        break;
++                                case "amarelo":
++                                        int modsAmarelos = calcularQuantidadeMods(quantidade, posicaoComboMods);
++                                        int modsLaranjasAmarelos = quantidade*3;
++                                        int modsRoxosAmarelos = quantidade*12;
++                                        int modsAzuisAmarelos = quantidade*60;
++                                        int modsBrancosAmarelos = quantidade*360;
++                                        textoResultado = "Para " + quantidade + " Mods Amarelos você precisa de " + modsLaranjasAmarelos + " Mods Laranjas ou " + modsRoxosAmarelos +
++                                                        " Mods Roxos ou " + modsAzuisAmarelos + " Mods Azuis ou " + modsBrancosAmarelos + " Mods Brancos. Totalizando " +
++                                                        (modsBrancosAmarelos * valorMod) + " Prata.";
++                                        break;
++                        }
++
++                        resultadoCalculo.setText(textoResultado);
++                } else {
++                        // Lógica para lidar com campos vazios, se necessário
++                }
++        }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/TacticoolPlanner/HomeActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/HomeActivity.java b/app/src/main/java/com/example/TacticoolPlanner/HomeActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/HomeActivity.java	
++++ /dev/null	
+@@ -1,51 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import com.example.TacticoolPlanner.R;
+-
+-
+-public class HomeActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_home);
+-
+-        Button btnCalculadoras = findViewById(R.id.btnCalculadoras);
+-        Button btnCadastro = findViewById(R.id.btnCadastro);
+-        Button btnConsulta = findViewById(R.id.btnConsulta);
+-
+-        btnCalculadoras.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em Calculadoras, vá para a tela de Calculadoras
+-                Intent intent = new Intent(HomeActivity.this, CalculadorasActivity.class);
+-                startActivity(intent);
+-            }
+-        });
+-
+-        btnCadastro.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em Cadastro, vá para a tela de Cadastro
+-                Intent intent = new Intent(HomeActivity.this, CadastroActivity.class);
+-                startActivity(intent);
+-            }
+-        });
+-
+-        btnConsulta.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em Consulta, vá para a tela de Consulta
+-                Intent intent = new Intent(HomeActivity.this, ConsultaActivity.class);
+-                startActivity(intent);
+-            }
+-        });
+-    }
+-}
+Index: app/src/main/java/com/example/TacticoolPlanner/MainActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/MainActivity.java b/app/src/main/java/com/example/TacticoolPlanner/MainActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/MainActivity.java	
++++ /dev/null	
+@@ -1,54 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-import android.widget.EditText;
+-import android.widget.Toast;
+-
+-import com.example.TacticoolPlanner.R;
+-
+-public class MainActivity extends AppCompatActivity {
+-
+-    private EditText editTextUsername, editTextPassword;
+-    private Button buttonLogin;
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_main);
+-
+-        // Referenciar os elementos da UI
+-        editTextUsername = findViewById(R.id.editTextUsername);
+-        editTextPassword = findViewById(R.id.editTextPassword);
+-        buttonLogin = findViewById(R.id.buttonLogin);
+-
+-        // Adicionar um listener de clique ao botão de login
+-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Obter o texto dos campos de usuário e senha
+-                String username = editTextUsername.getText().toString();
+-                String password = editTextPassword.getText().toString();
+-
+-                // Implementar a lógica de autenticação (pode ser uma verificação simples)
+-                if (username.equals("") && password.equals("")) {
+-                    // Autenticação bem-sucedida
+-
+-                    // Iniciar a HomeActivity
+-                    Intent intent = new Intent(MainActivity.this, com.example.TacticoolPlanner.HomeActivity.class);
+-                    startActivity(intent);
+-
+-                    // Fechar a MainActivity para evitar que o usuário retorne pressionando o botão "Voltar"
+-                    finish();
+-                } else {
+-                    // Autenticação falhou
+-                    Toast.makeText(MainActivity.this, "Login falhou", Toast.LENGTH_SHORT).show();
+-                }
+-            }
+-        });
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/TacticoolPlanner/CadastroActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/CadastroActivity.java b/app/src/main/java/com/example/TacticoolPlanner/CadastroActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/CadastroActivity.java	
++++ /dev/null	
+@@ -1,30 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import com.example.TacticoolPlanner.R;
+-
+-public class CadastroActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_cadastro);
+-
+-        Button btnVoltar = findViewById(R.id.btnVoltar);
+-
+-        btnVoltar.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em "Voltar", retorne para a tela anterior
+-                onBackPressed();
+-            }
+-        });
+-
+-        // Adicione mais lógica conforme necessário
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/TacticoolPlanner/ConsultaActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/ConsultaActivity.java b/app/src/main/java/com/example/TacticoolPlanner/ConsultaActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/ConsultaActivity.java	
++++ /dev/null	
+@@ -1,28 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-
+-public class ConsultaActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_consulta);
+-
+-        Button btnVoltar = findViewById(R.id.btnVoltar);
+-
+-        btnVoltar.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em "Voltar", retorne para a tela anterior
+-                onBackPressed();
+-            }
+-        });
+-
+-        // Adicione mais lógica conforme necessário
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/TacticoolPlanner/CalculadorasActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/CalculadorasActivity.java b/app/src/main/java/com/example/TacticoolPlanner/CalculadorasActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/CalculadorasActivity.java	
++++ /dev/null	
+@@ -1,30 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-
+-public class CalculadorasActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_calculadoras);
+-
+-        Button btnCalculadoraMods = findViewById(R.id.btnCalculadoraMods);
+-
+-        btnCalculadoraMods.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                // Ao clicar em "Calculadora de Mods", vá para a tela CalculadoraModsActivity
+-                Intent intent = new Intent(CalculadorasActivity.this, CalculadoraModsActivity.class);
+-                startActivity(intent);
+-            }
+-        });
+-
+-        // Adicione mais inicializações ou lógica conforme necessário
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/TacticoolPlanner/CalculadoraModsActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/TacticoolPlanner/CalculadoraModsActivity.java b/app/src/main/java/com/example/TacticoolPlanner/CalculadoraModsActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/TacticoolPlanner/CalculadoraModsActivity.java	
++++ /dev/null	
+@@ -1,125 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.AdapterView;
+-import android.widget.ArrayAdapter;
+-import android.widget.Button;
+-import android.widget.EditText;
+-import android.widget.Spinner;
+-import android.widget.TextView;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-public class CalculadoraModsActivity extends AppCompatActivity {
+-
+-        private Spinner comboMods1;
+-        private EditText quantidadeMods;
+-        private EditText valorModBranco;
+-        private TextView resultadoCalculo;
+-
+-        private final int[] taxasDeConversao = {6, 30, 120, 360};
+-
+-        private int calcularQuantidadeMods(int quantidade, int posicaoComboMods) {
+-                int taxaConversao = 1;
+-                for (int i = 0; i < posicaoComboMods; i++) {
+-                        taxaConversao *= taxasDeConversao[i];
+-                }
+-                return quantidade * taxaConversao;
+-        }
+-
+-        @Override
+-        protected void onCreate(Bundle savedInstanceState) {
+-                super.onCreate(savedInstanceState);
+-                setContentView(R.layout.activity_calculadora_mods);
+-
+-                quantidadeMods = findViewById(R.id.quantidadeMods);
+-                comboMods1 = findViewById(R.id.comboMods1);
+-                valorModBranco = findViewById(R.id.valorModBranco);
+-                resultadoCalculo = findViewById(R.id.resultadoCalculo);
+-
+-                valorModBranco.setText("2000"); // Valor padrão para valorModBranco
+-
+-                final String[] opcoesMods1 = {"Branco", "Azul", "Roxo", "Laranja", "Amarelo"};
+-
+-                ArrayAdapter<String> adapterMods1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opcoesMods1);
+-                adapterMods1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+-                comboMods1.setAdapter(adapterMods1);
+-
+-                comboMods1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+-                        @Override
+-                        public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+-                                calcularConversao();
+-                        }
+-
+-                        @Override
+-                        public void onNothingSelected(AdapterView<?> adapterView) {
+-                                // Implementação se nada for selecionado
+-                        }
+-                });
+-
+-                Button btnCalcular = findViewById(R.id.btnCalcular);
+-                btnCalcular.setOnClickListener(new View.OnClickListener() {
+-                        @Override
+-                        public void onClick(View view) {
+-                                calcularConversao();
+-                        }
+-                });
+-        }
+-
+-        private void calcularConversao() {
+-                String quantidadeStr = quantidadeMods.getText().toString();
+-                String valorModStr = valorModBranco.getText().toString();
+-
+-                if (!quantidadeStr.isEmpty() && !valorModStr.isEmpty()) {
+-                        int quantidade = Integer.parseInt(quantidadeStr);
+-                        int valorMod = Integer.parseInt(valorModStr);
+-
+-                        int posicaoComboMods = comboMods1.getSelectedItemPosition();
+-                        String corSelecionada = comboMods1.getSelectedItem().toString();
+-
+-                        String textoResultado = "";
+-
+-                        switch (corSelecionada.toLowerCase()) {
+-                                case "branco":
+-                                        textoResultado = "Para " + quantidade + " Mods Branco você precisa de " + (valorMod * quantidade) + " Prata.";
+-                                        break;
+-                                case "azul":
+-                                        int modsBranco = calcularQuantidadeMods(quantidade, posicaoComboMods);
+-                                        textoResultado = "Para " + quantidade + " Mods Azuis você precisa de " + modsBranco +
+-                                                " Mods Brancos. Totalizando " + (modsBranco * valorMod) + " Prata.";
+-                                        break;
+-                                case "roxo":
+-                                        int modsRoxos = calcularQuantidadeMods(quantidade, posicaoComboMods);
+-                                        int modsBrancosRoxos = quantidade*30;
+-                                        int modsAzuisRoxos = quantidade*5;
+-                                        textoResultado = "Para " + quantidade + " Mods Roxos você precisa de " + modsAzuisRoxos + " Mods Azuis ou " + modsBrancosRoxos +
+-                                                        " Mods Brancos. Totalizando " + (modsBrancosRoxos * valorMod) + " Prata.";
+-                                        break;
+-                                case "laranja":
+-                                        int modsLaranjas = calcularQuantidadeMods(quantidade, posicaoComboMods);
+-                                        int modsRoxosLaranjas = quantidade*4;
+-                                        int modsAzuisLaranjas = quantidade*20;
+-                                        int modsBrancosLaranjas = quantidade*120;
+-                                        textoResultado = "Para " + quantidade + " Mods Laranjas você precisa de " + modsRoxosLaranjas + " Mods Roxos ou " + modsAzuisLaranjas +
+-                                                        " Mods Azuis ou " + modsBrancosLaranjas + " Mods Brancos. Totalizando " +
+-                                                        (modsBrancosLaranjas * valorMod) + " Prata.";
+-                                        break;
+-                                case "amarelo":
+-                                        int modsAmarelos = calcularQuantidadeMods(quantidade, posicaoComboMods);
+-                                        int modsLaranjasAmarelos = quantidade*3;
+-                                        int modsRoxosAmarelos = quantidade*12;
+-                                        int modsAzuisAmarelos = quantidade*60;
+-                                        int modsBrancosAmarelos = quantidade*360;
+-                                        textoResultado = "Para " + quantidade + " Mods Amarelos você precisa de " + modsLaranjasAmarelos + " Mods Laranjas ou " + modsRoxosAmarelos +
+-                                                        " Mods Roxos ou " + modsAzuisAmarelos + " Mods Azuis ou " + modsBrancosAmarelos + " Mods Brancos. Totalizando " +
+-                                                        (modsBrancosAmarelos * valorMod) + " Prata.";
+-                                        break;
+-                        }
+-
+-                        resultadoCalculo.setText(textoResultado);
+-                } else {
+-                        // Lógica para lidar com campos vazios, se necessário
+-                }
+-        }
+-}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	(date 1700254006110)
+@@ -10,7 +10,7 @@
+         android:label="@string/app_name"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/Theme.TacticoolPlanner"
++        android:theme="@style/Theme.Teste"
+         tools:targetApi="31">
+         <activity
+             android:name=".CalculadoraModsActivity"
+Index: app/src/test/java/com/example/teste/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/teste/ExampleUnitTest.java b/app/src/test/java/com/example/teste/ExampleUnitTest.java
+new file mode 100644
+--- /dev/null	(date 1700254006108)
++++ b/app/src/test/java/com/example/teste/ExampleUnitTest.java	(date 1700254006108)
+@@ -0,0 +1,17 @@
++package com.example.teste;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: app/src/test/java/com/example/TacticoolPlanner/ExampleUnitTest.java
+===================================================================
+diff --git a/app/src/test/java/com/example/TacticoolPlanner/ExampleUnitTest.java b/app/src/test/java/com/example/TacticoolPlanner/ExampleUnitTest.java
+deleted file mode 100644
+--- a/app/src/test/java/com/example/TacticoolPlanner/ExampleUnitTest.java	
++++ /dev/null	
+@@ -1,17 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import org.junit.Test;
+-
+-import static org.junit.Assert.*;
+-
+-/**
+- * Example local unit test, which will execute on the development machine (host).
+- *
+- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+- */
+-public class ExampleUnitTest {
+-    @Test
+-    public void addition_isCorrect() {
+-        assertEquals(4, 2 + 2);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/teste/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/teste/ExampleInstrumentedTest.java b/app/src/androidTest/java/com/example/teste/ExampleInstrumentedTest.java
+new file mode 100644
+--- /dev/null	(date 1700254006099)
++++ b/app/src/androidTest/java/com/example/teste/ExampleInstrumentedTest.java	(date 1700254006099)
+@@ -0,0 +1,26 @@
++package com.example.teste;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("com.example.teste", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/TacticoolPlanner/ExampleInstrumentedTest.java
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/TacticoolPlanner/ExampleInstrumentedTest.java b/app/src/androidTest/java/com/example/TacticoolPlanner/ExampleInstrumentedTest.java
+deleted file mode 100644
+--- a/app/src/androidTest/java/com/example/TacticoolPlanner/ExampleInstrumentedTest.java	
++++ /dev/null	
+@@ -1,26 +0,0 @@
+-package com.example.TacticoolPlanner;
+-
+-import android.content.Context;
+-
+-import androidx.test.platform.app.InstrumentationRegistry;
+-import androidx.test.ext.junit.runners.AndroidJUnit4;
+-
+-import org.junit.Test;
+-import org.junit.runner.RunWith;
+-
+-import static org.junit.Assert.*;
+-
+-/**
+- * Instrumented test, which will execute on an Android device.
+- *
+- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+- */
+-@RunWith(AndroidJUnit4.class)
+-public class ExampleInstrumentedTest {
+-    @Test
+-    public void useAppContext() {
+-        // Context of the app under test.
+-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+-        assertEquals("com.example.TacticoolPlanner", appContext.getPackageName());
+-    }
+-}
+\ No newline at end of file
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	
++++ b/app/build.gradle.kts	(date 1700254006080)
+@@ -3,11 +3,11 @@
+ }
+ 
+ android {
+-    namespace = "com.example.TacticoolPlanner"
++    namespace = "com.example.teste"
+     compileSdk = 34
+ 
+     defaultConfig {
+-        applicationId = "com.example.TacticoolPlanner"
++        applicationId = "com.example.teste"
+         minSdk = 24
+         targetSdk = 34
+         versionCode = 1

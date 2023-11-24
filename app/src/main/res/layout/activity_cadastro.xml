@@ -1,0 +1,42 @@
+<!-- activity_cadastro.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".CadastroActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Operadores"
+        android:id="@+id/btnCadastroOperadores"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Armas"
+        android:id="@+id/btnCadastroArmas"
+        android:layout_below="@+id/btnCadastroOperadores"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Equipamentos"
+        android:id="@+id/btnCadastroEquipamentos"
+        android:layout_below="@+id/btnCadastroArmas"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/btnVoltar"
+        android:layout_below="@+id/btnCadastroEquipamentos"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Adicione mais botões ou elementos conforme necessário -->
+
+</RelativeLayout>

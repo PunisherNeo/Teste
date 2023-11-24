@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_calculadoras"
+            android:title="Calculadoras">
+            <menu>
+                <item
+                    android:id="@+id/menu_calculadora_mods"
+                    android:title="Calculadora de Mods"/>
+                <item
+                    android:id="@+id/menu_calculadora_operadores"
+                    android:title="Calculadora de Operadores"/>
+                <item
+                    android:id="@+id/menu_calculadora_armas"
+                    android:title="Calculadora de Armas"/>
+                <item
+                    android:id="@+id/menu_calculadora_equipamentos"
+                    android:title="Calculadora de Equipamentos"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/menu_cadastro"
+            android:title="Cadastro">
+            <menu>
+                <item
+                    android:id="@+id/menu_cadastro_operadores"
+                    android:title="Cadastro de Operadores"/>
+                <item
+                    android:id="@+id/menu_cadastro_armas"
+                    android:title="Cadastro de Armas"/>
+                <item
+                    android:id="@+id/menu_cadastro_equipamentos"
+                    android:title="Cadastro de Equipamentos"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/menu_consulta"
+            android:title="Consulta">
+            <menu>
+                <item
+                    android:id="@+id/menu_consulta_operadores"
+                    android:title="Consultar Operadores"/>
+                <item
+                    android:id="@+id/menu_consulta_armas"
+                    android:title="Consultar Armas"/>
+                <item
+                    android:id="@+id/menu_consulta_equipamentos"
+                    android:title="Consultar Equipamentos"/>
+            </menu>
+        </item>
+    </group>
+</menu>

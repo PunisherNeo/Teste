@@ -1,0 +1,59 @@
+<!-- activity_calculadoras.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".CalculadorasActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Mods"
+        android:id="@+id/btnCalculadoraMods"
+        android:layout_centerVertical="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Missoes"
+        android:layout_below="@+id/btnCalculadoraMods"
+        android:id="@+id/btnCalculadoraMissoes"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Operadores"
+        android:id="@+id/btnCalculadoraOperadores"
+        android:layout_below="@+id/btnCalculadoraMissoes"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Armas"
+        android:id="@+id/btnCalculadoraArmas"
+        android:layout_below="@+id/btnCalculadoraOperadores"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Equipamentos"
+        android:id="@+id/btnCalculadoraEquipamentos"
+        android:layout_below="@+id/btnCalculadoraArmas"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/btnVoltar"
+        android:layout_below="@+id/btnCalculadoraEquipamentos"
+        android:layout_marginTop="16dp"/>
+
+
+    <!-- Adicione mais botões ou elementos conforme necessário -->
+
+</RelativeLayout>

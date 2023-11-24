@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="quantidadeMods" type="id" />
+    <item name="valorModBranco" type="id" />
+    <item name="textCalcularMods" type="id" />
+    <item name="comboMods1" type="id" />
+    <item name="comboMods2" type="id" />
+    <item name="btnCalcular" type="id" />
+</resources>

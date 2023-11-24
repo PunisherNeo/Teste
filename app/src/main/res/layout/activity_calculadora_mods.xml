@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Novo TextView no topo da tela -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Mods"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/textCalculadoraMods"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:layout_below="@+id/textCalculadoraMods"
+
+        android:id="@+id/textValorModBranco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor Mod Branco"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+
+    <EditText
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/valorModBranco"
+        android:layout_below="@id/textValorModBranco"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade Mods"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textQuantidadeMods"
+        android:layout_below="@id/valorModBranco"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/quantidadeMods"
+        android:layout_below="@id/textQuantidadeMods"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cor do Mod"
+        android:textSize="16sp"
+        android:id="@+id/textCorMod"
+        android:layout_below="@id/quantidadeMods"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comboMods1"
+        android:layout_below="@id/textCorMod"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:id="@+id/btnCalcular"
+        android:layout_below="@id/comboMods1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/resultadoCalculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_below="@id/btnCalcular"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:layout_below="@id/resultadoCalculo"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Seus outros elementos -->
+
+</RelativeLayout>

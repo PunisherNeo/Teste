@@ -1,0 +1,42 @@
+<!-- activity_consulta.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ConsultaActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Operadores"
+        android:id="@+id/btnConsultaOperadores"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Armas"
+        android:id="@+id/btnConsultaArmas"
+        android:layout_below="@+id/btnConsultaOperadores"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Equipamentos"
+        android:id="@+id/btnConsultaEquipamentos"
+        android:layout_below="@+id/btnConsultaArmas"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/btnVoltar"
+        android:layout_below="@+id/btnConsultaEquipamentos"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Adicione mais botões ou elementos conforme necessário -->
+
+</RelativeLayout>

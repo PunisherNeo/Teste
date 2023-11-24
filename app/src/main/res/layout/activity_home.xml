@@ -1,0 +1,44 @@
+<!-- activity_home.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnCalculadoras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadoras"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:id="@+id/btnCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastro"
+        android:layout_below="@id/btnCalculadoras"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consulta"
+        android:layout_below="@id/btnCadastro"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/btnVoltar"
+        android:layout_below="@+id/btnConsulta"
+        android:layout_marginTop="16dp"/>
+
+
+</RelativeLayout>
